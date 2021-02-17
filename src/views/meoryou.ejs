@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/utils.css">
+    <title>Symptomate-Check your symptoms</title>
+</head>
+<body>
+    <nav class="nav max-width-0 m-auto">
+        <div class="nav-left">
+           <span> Symptomate</span>
+            <ul>
+              <li><a href="/index">Introduction</a></li>
+              <li><a href="/patient">Patient</a></li>
+              <li><a href="/Symptoms">Symptoms</a></li>
+              <li><a href="/Regions">Regions</a></li>
+              <li><a href="/Interview">Interviews</a></li>
+              <li><a href="/Result">Results</a></li>                 
+            </ul>
+
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li>For Business</li>
+                <li>English</li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="content max-width-1 m-auto">
+        <div class="content-left " style="padding-left: 5px;">
+            <p> Who is the checkup for? </p>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                 Myself
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                  Someone else
+                </label>
+              </div>
+              <div class="slidecontainer">
+                <p>What is your age  ?</p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <p>Value: <span id="demo"></span></p>
+              </div>
+            
+  
+
+        </div>
+
+        <div class="content-right" style="padding-top: 140px;">
+            <p> Select your sex: </p>
+        
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios11" value="option3" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                 Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios21" value="option4">
+                <label class="form-check-label" for="exampleRadios2">
+                  Female
+                </label>
+              </div>
+              <div style="padding-top: 300px;">
+              
+              <a class="btn btn-success" href="/index" role="button">Prev</a>
+              <a class="btn btn-success" href="/patient" role="button">Next</a>
+            </div>
+            </div>
+    </div>
+
+        
+    
+
+    <!-- <div class="max-width-1 m-auto">
+    <hr>
+    </div>
+ <div class="home-articles max-width-1 m-auto">
+     <div class="home-article">
+         <h2>Featured Articles</h2>
+     </div>-->
+ </div>
+    <div class="footer">
+        <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+  </div>
+
+  <script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+    
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+    </script>
+</body>
+</html>
