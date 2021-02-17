@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({
   }));
 
 
-app.get('/index', (req, res) => {
+app.get('/diagnosis', (req, res) => {
     try{
        res.render('index.ejs')
       //res.send("hi")
@@ -90,15 +90,25 @@ app.get('/Result', (req, res) => {
     }
 })
 
+app.get('/end', (req, res) => {
+    try{
+       res.render('end.ejs');
+
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
 // get all quiz questions
-// app.get('/questions', async (req, res) => {
-//     try {
-//         const questions = await Question.find()  //Question is a database
-//         return res.status(200).json(questions)
-//     } catch (error) {
-//         return res.status(500).json({"error":error})
-//     }
-// })
+app.get('/questions', async (req, res) => {
+    try {
+        const questions = await Question.find()  //Question is a database
+        return res.status(200).json(questions)
+    } catch (error) {
+        return res.status(500).json({"error":error})
+    }
+})
 
 app.get('/ques', function (req, res) {   
     Question.find({}, function (err, allDetails) {
@@ -127,25 +137,25 @@ app.get('/questions/:id', async (req, res) => {
 })
 
 // create one quiz question
-// app.post('/questions', async (req, res) => {
-//     try {
-//         const { description } = req.body
-//         const { alternatives } = req.body
+app.post('/questions', async (req, res) => {
+    try {
+        const { description } = req.body
+        const { alternatives } = req.body
 
-//         const question = await Question.create({
-//             description,
-//             alternatives
-//         })
+        const question = await Question.create({
+            description,
+            alternatives
+        })
 
-//         return res.status(201).json(question)
-//     } catch (error) {
-//         return res.status(500).json({"error":error})
-//     }
-// })
+        return res.status(201).json(question)
+    } catch (error) {
+        return res.status(500).json({"error":error})
+    }
+})
 app.post('/Result', async(req, res) => {
     console.log(req.body);
     res.send("posting user input")
-    const answer = new Answers(req.body);
+    const answer = new Answers(req.body.answers);
     await answer.save();
     console.log(answer)
    // res.render('Result.ejs')
