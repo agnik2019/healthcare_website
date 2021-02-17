@@ -13,11 +13,10 @@
         <div class="nav-left">
            <span> Symptomate</span>
             <ul>
-              <li><a href="/index">Introduction</a></li>
+              <li><a href="/diagnosis">Introduction</a></li>
               <li><a href="/patient">Patient</a></li>
               <li><a href="/Symptoms">Symptoms</a></li>
-              <li><a href="/Regions">Regions</a></li>
-              <li><a href="/Interview">Interviews</a></li>
+              <li><a href="/ques">Interviews</a></li>
               <li><a href="/Result">Results</a></li>                     
             </ul>
 
@@ -30,8 +29,9 @@
         </div>
 
     </nav>
-        
-    <div style="padding-left: 45px;">
+    <div class="max-width-1 m-auto">
+
+    <div >
       
       <!-- <a href="/Questions">Get Details</a> -->
       <h3>Please check all the statements below that apply to them.</h3>
@@ -46,7 +46,7 @@
 
     <h4><%= item.description%></h4>
 <form method="POST" action="/Result">
-<select name="answers" id="answers"> 
+<select name="response" id="response"> 
  
   <% for(let ele of item.alternatives) { %>
     <option value=" <%= ele.text  %>" > <%= ele.text  %></option>
@@ -61,7 +61,7 @@
 </form>
     </div>
 
-    <div id="result"></div> 
+    <!-- <div id="result"></div>  -->
     <!-- <div class="max-width-1 m-auto">
     <hr>
     </div>
@@ -73,11 +73,12 @@
 
          
      </div>-->
+     </div>
  </div>
     <div class="footer">
         <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
   </div>
- <script>
+ <!-- <script>
     function displayRadioValue() { 
             var ele = document.getElementsByName('gender'); 
               
@@ -88,7 +89,7 @@
             } 
         } 
 
- </script>
+ </script> -->
 
 </body>
 </html>

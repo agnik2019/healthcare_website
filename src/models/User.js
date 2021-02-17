@@ -6,5 +6,5 @@ var UserSchema = new mongoose.Schema({
   age: Number,
  });
 
-User = mongoose.model('User', UserSchema, 'Users');
+User = mongoose.model('User', UserSchema);
 module.exports = User;

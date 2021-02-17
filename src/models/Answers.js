@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var AnswerSchema = new mongoose.Schema({
 
-  QuestionId: {
+  quesId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'QuestionCategories'
   },
@@ -12,11 +12,12 @@ var AnswerSchema = new mongoose.Schema({
   },
 
   response : [{
-      questionId: String,
-      optionId: String,
-  }],
+      // questionId: String,
+      // optionId: String,
+      type: String
+  }]
   
- },);
+ });
 
 
-module.exports = mongoose.model('Answer', AnswerSchema)
+module.exports = mongoose.model('Answers', AnswerSchema)

@@ -1,6 +1,8 @@
 const express = require('express')
 const Question = require('./models/Question') // includes our model
 const Answers = require('./models/Answers')
+const Category = require('./models/QuestionCategories')
+const User = require('./models/User')
 //const path = require('path');
 const app= express()
 //const router = express.Router
@@ -22,7 +24,7 @@ app.use(bodyParser.urlencoded({
 
 app.get('/diagnosis', (req, res) => {
     try{
-       res.render('index.ejs')
+       res.render('diagnosis.ejs')
       //res.send("hi")
       //res.sendFile(path.join(__dirname+'/index.html'));
 
@@ -78,17 +80,17 @@ app.get('/Regions', (req, res) => {
     }
 })
 
-app.get('/Result', (req, res) => {
-    try{
-       res.render('Result.ejs')
-      //res.send("hi")
-      //res.sendFile(path.join(__dirname+'/index.html'));
+// app.get('/Result', (req, res) => {
+//     try{
+//        res.render('Result.ejs',{response})
+//       //res.send("hi")
+//       //res.sendFile(path.join(__dirname+'/index.html'));
 
-    }
-    catch(err){
-        console.log(err);
-    }
-})
+//     }
+//     catch(err){
+//         console.log(err);
+//     }
+// })
 
 app.get('/end', (req, res) => {
     try{
@@ -118,6 +120,23 @@ app.get('/ques', function (req, res) {
             res.render("Ques", { details: allDetails })
         }
 })
+})
+
+app.get('/Result', function (req, res) {   
+    Answers.find({"response" : { $ne : null}}, function (err, allDetails) {
+        if (err) {
+            console.log(err);
+        } else {
+            //console.log(allDetails)
+            res.render("Result", {response: allDetails })
+        }
+})
+// var query = Answers.find({ response : { ne : null}}).select('response');
+
+//     query.exec(function (err, someValue) {
+//         if (err) return next(err);
+//         res.render("Result", { response: someValue });
+//     });
 })
 
 // get one quiz question
@@ -153,12 +172,20 @@ app.post('/questions', async (req, res) => {
     }
 })
 app.post('/Result', async(req, res) => {
-    console.log(req.body);
-    res.send("posting user input")
-    const answer = new Answers(req.body.answers);
-    await answer.save();
-    console.log(answer)
-   // res.render('Result.ejs')
+    // console.log(req.body);
+   try {
+    const { response } = req.body
+    
+
+    const answer = await Answers.create({
+        response
+    })
+
+   // return res.status(201).json(answer)
+   return res.render('Result2',{response})
+} catch (error) {
+    return res.status(500).json({"error":error})
+}
 })
 // update one quiz question
 app.put('/questions/:id', async (req, res) => {
@@ -199,6 +226,16 @@ app.delete('/questions/:id', async (req, res) => {
         }
     } catch (error) {
         return res.status(500).json({"error":error})
+    }
+})
+
+
+app.get('/allResponse', async(req, res) => {
+    try{
+        var result = await Answers.find().lean();
+        res.json(result);     
+    }catch(e){
+        res.send(e);
     }
 })
 

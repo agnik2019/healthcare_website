@@ -5,6 +5,7 @@ const routes = require('./routes') // includes the routes.js file
 const cors = require('cors') // includes cors module
 
 //require('dotenv').config()
+const uri = "mongodb+srv:agnik:<password>@cluster0.se5mx.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
 app.use(cors()) // We're telling express to use CORS
 app.use(express.json()) // we need to tell server to use json as well

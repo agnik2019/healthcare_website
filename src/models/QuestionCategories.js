@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var CategorySchema = new mongoose.Schema({
 
 
-  name: String,
+  name: String, //back pain etc
 
   questions : [{
     questionText: String,
