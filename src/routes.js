@@ -165,8 +165,8 @@ app.get('/questions', async (req, res) => {
     }
 })
 
-app.get('/ques', function (req, res) {   
-    Question.find({}, function (err, allDetails) {
+app.get('/ques', async  (req, res)  => {   
+    await Question.find({}, function (err, allDetails) {
         if (err) {
             console.log(err);
         } else {
