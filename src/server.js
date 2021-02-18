@@ -60,7 +60,8 @@ function auth (req, res, next) {
 }
 
 
+const port = process.env.PORT || 9000;
 
-app.listen(9000, () => {
+app.listen(port, () => {
     console.log("The api is running...")
 })
