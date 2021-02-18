@@ -170,7 +170,7 @@ app.get('/ques', async  (req, res)  => {
         if (err) {
             console.log(err);
         } else {
-            res.render("Ques", { details: allDetails })
+            res.render("ques", { details: allDetails })
         }
 })
 })
