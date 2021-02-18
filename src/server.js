@@ -21,9 +21,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //const dburl = 'mongodb//localhost:27017/myquizapp';
-const dburl = process.env.DBURL;
-console.log(dburl)
-//const dburl = "mongodb+srv://agnik:NyPH2Iwsdz7slgDe@cluster0.se5mx.mongodb.net/<dbname>?retryWrites=true&w=majority";
+//const dburl = process.env.DBURL;
+//console.log(dburl)
+const dburl = "mongodb+srv://agnik:NyPH2Iwsdz7slgDe@cluster0.se5mx.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
 app.use(cors()) // We're telling express to use CORS
 app.use(express.json()) // we need to tell server to use json as well
