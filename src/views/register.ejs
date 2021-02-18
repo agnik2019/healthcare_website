@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/utils.css">
+    <title>Symptomate-Check your symptoms</title>
+</head>
+<body>
+    <nav class="nav max-width-0 m-auto">
+        <div class="nav-left">
+           <span> Symptomate</span>
+            <ul>
+                <li><a href="/diagnosis">Introduction</a></li>
+                <li><a href="/patient">Patient</a></li>
+                <li><a href="/Symptoms">Symptoms</a></li>
+                <li><a href="/ques">Interviews</a></li>
+                <li><a href="/Result">Results</a></li>                 
+            </ul>
+
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li>For Business</li>
+                <li>English</li>
+            </ul>
+        </div>
+
+    </nav>
+        
+    
+
+   <div class="max-width-1 m-auto">
+       <h1>Register</h1>
+    <form action="/register" method="POST" class="validated-form" novalidate>
+        <div class="mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="text" id="email" name="email" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" id="username" name="username" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="password" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <button class="btn btn-success">Register</button>
+    </form>
+    </div>
+
+    <div class="footer">
+        <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+  </div>
+</body>
+</html>

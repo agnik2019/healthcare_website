@@ -3,6 +3,10 @@ const Question = require('./models/Question') // includes our model
 const Answers = require('./models/Answers')
 const Category = require('./models/QuestionCategories')
 const User = require('./models/User')
+const passport = require('passport');
+
+
+const catchAsync = require('./utils/catchAsync');
 //const path = require('path');
 const app= express()
 //const router = express.Router
@@ -22,12 +26,61 @@ app.use(bodyParser.urlencoded({
   }));
 
 
+
+app.get('/register', (req, res) => {
+    try{
+        res.render('register.ejs')
+ 
+     }
+     catch(err){
+         console.log(err);
+     }
+});
+
+
+app.get('/login', (req, res) => {
+    res.render('login');
+})
+
+
+app.post('/register', (req, res, next) => {
+    User.register(new User({username: req.body.username, email: req.body.email}), 
+      req.body.password, (err, user) => {
+      if(err) {
+        // res.statusCode = 500;
+        // res.setHeader('Content-Type', 'application/json');
+        // res.json({err: err});
+        res.redirect('register')
+      }
+      else {
+        passport.authenticate('local')(req, res, () => {
+        //   res.statusCode = 200;
+        //   res.setHeader('Content-Type', 'application/json');
+        //   res.json({success: true, status: 'Registration Successful!'});
+          res.redirect('diagnosis')
+        });
+      }
+    });
+  });
+  
+  app.post('/login', passport.authenticate('local'), (req, res) => {
+    // res.statusCode = 200;
+    // res.setHeader('Content-Type', 'application/json');
+    // res.json({success: true, status: 'You are successfully logged in!'});
+    res.redirect('diagnosis')
+  });
+
+
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('diagnosis');
+})
+
+
 app.get('/diagnosis', (req, res) => {
     try{
        res.render('diagnosis.ejs')
-      //res.send("hi")
-      //res.sendFile(path.join(__dirname+'/index.html'));
-
     }
     catch(err){
         console.log(err);
