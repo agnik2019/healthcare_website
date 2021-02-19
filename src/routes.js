@@ -26,6 +26,15 @@ app.use(bodyParser.urlencoded({
   }));
 
 
+  app.get('/diagnosis1', (req, res) => {
+    try{
+       res.render('diagnosis1.ejs')
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
 
 app.get('/register', (req, res) => {
     try{
@@ -39,7 +48,29 @@ app.get('/register', (req, res) => {
 
 
 app.get('/login', (req, res) => {
+    try{
     res.render('login');
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+app.get('/error', (req, res) => {
+    try{
+    res.render('error');
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
+app.get('/errorreg', (req, res) => {
+    try{
+    res.render('errorreg');
+    }
+    catch(err){
+        console.log(err)
+    }
 })
 
 
@@ -50,7 +81,7 @@ app.post('/register', (req, res, next) => {
         // res.statusCode = 500;
         // res.setHeader('Content-Type', 'application/json');
         // res.json({err: err});
-        res.redirect('register')
+        res.redirect('errorreg')
       }
       else {
         passport.authenticate('local')(req, res, () => {
@@ -63,7 +94,7 @@ app.post('/register', (req, res, next) => {
     });
   });
   
-  app.post('/login', passport.authenticate('local'), (req, res) => {
+  app.post('/login', passport.authenticate('local',{ failureRedirect: '/error' }), (req, res) => {
     // res.statusCode = 200;
     // res.setHeader('Content-Type', 'application/json');
     // res.json({success: true, status: 'You are successfully logged in!'});
@@ -74,7 +105,7 @@ app.post('/register', (req, res, next) => {
 
 app.get('/logout', (req, res) => {
     req.logout();
-    res.redirect('diagnosis');
+    res.redirect('diagnosis1');
 })
 
 
