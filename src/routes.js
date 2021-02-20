@@ -152,41 +152,13 @@ app.get('/Symptoms', (req, res) => {
         console.log(err);
     }
 })
-app.get('/Regions', (req, res) => {
-    try{
-       res.render('Regions.ejs')
-      //res.send("hi")
-      //res.sendFile(path.join(__dirname+'/index.html'));
 
-    }
-    catch(err){
-        console.log(err);
-    }
-})
 
-// app.get('/Result', (req, res) => {
-//     try{
-//        res.render('Result.ejs',{response})
-//       //res.send("hi")
-//       //res.sendFile(path.join(__dirname+'/index.html'));
 
-//     }
-//     catch(err){
-//         console.log(err);
-//     }
-// })
 
-app.get('/end', (req, res) => {
-    try{
-       res.render('end.ejs');
 
-    }
-    catch(err){
-        console.log(err);
-    }
-})
 
-// get all quiz questions
+// get all  questions
 app.get('/questions', async (req, res) => {
     try {
         const questions = await Question.find()  //Question is a database
@@ -223,7 +195,7 @@ app.get('/Result', function (req, res) {
 //     });
 })
 
-// get one quiz question
+// get one  question
 app.get('/questions/:id', async (req, res) => {
     try {
         const _id = req.params.id 
@@ -239,7 +211,7 @@ app.get('/questions/:id', async (req, res) => {
     }
 })
 
-// create one quiz question
+// create one  question
 app.post('/questions', async (req, res) => {
     try {
         const { description } = req.body
@@ -271,7 +243,7 @@ app.post('/Result', async(req, res) => {
     return res.status(500).json({"error":error})
 }
 })
-// update one quiz question
+// update one  question
 app.put('/questions/:id', async (req, res) => {
     try {
         const _id = req.params.id 
@@ -296,7 +268,7 @@ app.put('/questions/:id', async (req, res) => {
     }
 })
 
-// delete one quiz question
+// delete one  question
 app.delete('/questions/:id', async (req, res) => {
     try {
         const _id = req.params.id 

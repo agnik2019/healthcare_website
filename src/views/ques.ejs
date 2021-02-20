@@ -30,27 +30,21 @@
 
     </nav>
 
-    <div class="max-width-1 m-auto">
+    <div class="quesstyle max-width-1 m-auto">
       <!-- <a href="/Questions">Get Details</a> -->
       <h3>Please check all the statements below that apply to them.</h3>
         <h4>Select one answer in each row.</h4>
 <hr>
 <% if(details!=null) { %>
-
-
 <% details.forEach(function(item){ %>
-
     <h4><%= item.description%></h4>
 <form method="POST" action="/Result">
 <select name="response" id="response"> 
  
   <% for(let ele of item.alternatives) { %>
     <option > <%= ele.text  %></option>
-
     <% } %>
 </select>
-
-
 <% }) %>
 <% } %>
 <button >   Submit </button> 
@@ -63,6 +57,5 @@
 
 </body>
 </html>
-
 
 
