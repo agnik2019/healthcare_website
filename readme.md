@@ -13,9 +13,12 @@
 - We can also create a portal with blood and oxygen distributors by which one can give notification whenever stock of plasma and oxygen will be available. By doing this we can handle the shortage of oxygen and plasma to a great extent.
 
 ## Use Case Diagram
-![](https://github.com/agnik2019/healthcare_website/assets/Usecase2ag.jpg)
+![](https://github.com/agnik2019/healthcare_website/blob/main/assets/Usecase2ag.jpeg)
 
 ## UML Diagram
 
-![](https://github.com/agnik2019/healthcare_website/assets/UML_agnik.png)
+![](https://github.com/agnik2019/healthcare_website/blob/main/assets/UML_agnik.png)
+
+## Project Plan
+![](https://github.com/agnik2019/healthcare_website/blob/main/assets/pp.jpg)
 
