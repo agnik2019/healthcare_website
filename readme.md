@@ -22,3 +22,7 @@
 ## Project Plan
 ![](https://github.com/agnik2019/healthcare_website/blob/main/assets/pp.jpg)
 
+## UI Screens(Project)
+![](https://github.com/agnik2019/healthcare_website/blob/main/assets/HomePage.png)
+![](https://github.com/agnik2019/healthcare_website/blob/main/assets/patient.png)
+

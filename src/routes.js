@@ -118,6 +118,15 @@ app.get('/diagnosis', (req, res) => {
     }
 })
 
+app.get('/patient_dashboard', (req, res) => {
+    try{
+       res.render('patientDash.ejs')
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
 app.get('/meoryou', (req, res) => {
     try{
        res.render('meoryou.ejs')
