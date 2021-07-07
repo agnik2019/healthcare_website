@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  
 }
 
 .nav {
@@ -9,8 +8,6 @@
   padding-top: 20px;
   padding-bottom: 20px;
   font-family: var(--font2);
-  /*height: 34px;*/
-  /*background-color: red;*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,14 +57,17 @@
   overflow-y: scroll;
 }
 .content {
+  padding-top: 5rem;
+  padding-bottom: 10rem;
   height: 800px;
-  background-color: #f9f9f9;
+  font-size: larger;
+  background-color: #e9e4d4;
   display: flex;
   margin-top:32px;
-  height: auto;
-  overflow-y: scroll;
+  height: 100%;
 }
 .content-left{
+  padding-left: 3rem;
   font-family: var(--font1);
   width: 50%;
   flex-direction: column;

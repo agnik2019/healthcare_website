@@ -40,6 +40,13 @@
                 <li class="nav-item">
                     <a href="#instructions" class="nav-link">Instructions</a>
                 </li>
+                <li class="nav-item">
+                    <form action="/logout" method="post">
+                        <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out
+                        </button>
+                    </form>
+                </li>
+
             </ul>
         </div>
     </div>
@@ -54,9 +61,9 @@
                     <p class="lead my-4">
                         In your fight against diseases, you are not alone
                       </p>
-                      <button class="btn btn-primary btn-lg">
-                          Start the online check up
-                      </button>
+                        <a href="/diagnosis" class="btn btn-primary btn-lg" role="button">
+                            Start the online check up
+                        </a>
                       <br>
                       <button class="btn btn-primary btn-lg">
                         Book Hospital
@@ -74,7 +81,9 @@
                         Find Blood
                     </button>
                 </div>
+
                 <img class="img-fluid w-50 d-none d-sm-block" src="/img/man.svg" alt="" srcset="">
+
             </div>
         </div>
     </section>
