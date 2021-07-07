@@ -23,6 +23,9 @@
 ![](https://github.com/agnik2019/healthcare_website/blob/main/assets/pp.jpg)
 
 ## UI Screens(Project)
-![](https://github.com/agnik2019/healthcare_website/blob/main/assets/HomePage.png)
+- Home Page
+![](https://github.com/agnik2019/healthcare_website/blob/main/assets/home.jpg)
+
+- Patient DashBoard
 ![](https://github.com/agnik2019/healthcare_website/blob/main/assets/patient.png)
 
