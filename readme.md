@@ -31,3 +31,7 @@
 - Patient DashBoard
 ![](https://github.com/agnik2019/healthcare_website/blob/main/assets/pa1.jpg)
 
+## Deploy
+I deploy it to tje heroku server
+[link](https://tranquil-sands-68614.herokuapp.com/)
+
