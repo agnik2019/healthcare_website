@@ -32,6 +32,7 @@
 ![](https://github.com/agnik2019/healthcare_website/blob/main/assets/pa1.jpg)
 
 ## Deploy
-I deploy it to tje heroku server
+I deploy it to the heroku server.
+Please click on the mentioned link.
 [link](https://tranquil-sands-68614.herokuapp.com/)
 
